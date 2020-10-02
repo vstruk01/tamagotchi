@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="MenuController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="579.0" prefWidth="858.0" styleClass="bodybg" stylesheets="@styleMenu.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="world.ucode.menu.MenuController">
+   <children>
+      <Button alignment="CENTER" layoutX="84.0" layoutY="220.0" mnemonicParsing="false" opacity="0.05" prefHeight="69.0" prefWidth="220.0" styleClass="buttonOpacity" stylesheets="@buttonOfMenu.css" textAlignment="CENTER">
+         <font>
+            <Font size="19.0" />
+         </font></Button>
+      <Button layoutX="84.0" layoutY="370.0" mnemonicParsing="false" opacity="0.05" prefHeight="69.0" prefWidth="220.0" styleClass="buttonOpacity" stylesheets="@buttonOfMenu.css" textAlignment="CENTER">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button alignment="CENTER" layoutX="84.0" layoutY="108.0" mnemonicParsing="false" opacity="0.05" prefHeight="69.0" prefWidth="220.0" styleClass="buttonOpacity" stylesheets="@buttonOfMenu.css">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+      <Label id="newGame" fx:id="newGame" alignment="CENTER" layoutX="84.0" layoutY="108.0" onMouseClicked="#handleNewGame" prefHeight="69.0" prefWidth="220.0" text="New Game" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="loadGame" alignment="CENTER" layoutX="84.0" layoutY="220.0" onMouseClicked="#handleLoadGame" prefHeight="69.0" prefWidth="220.0" text="Load Game" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="exit" alignment="CENTER" layoutX="84.0" layoutY="370.0" onMouseClicked="#handleExit" prefHeight="69.0" prefWidth="220.0" text="Exit" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
