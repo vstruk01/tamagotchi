@@ -7,16 +7,16 @@
 
 <Pane fx:id="MenuController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="579.0" prefWidth="858.0" styleClass="bodybg" stylesheets="@styleMenu.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="world.ucode.menu.MenuController">
    <children>
-      <Button alignment="CENTER" layoutX="84.0" layoutY="220.0" mnemonicParsing="false" opacity="0.05" prefHeight="69.0" prefWidth="220.0" styleClass="buttonOpacity" stylesheets="@buttonOfMenu.css" textAlignment="CENTER">
+      <Button alignment="CENTER" layoutX="84.0" layoutY="220.0" mnemonicParsing="false" opacity="0.3" prefHeight="69.0" prefWidth="220.0" styleClass="buttonOpacity" stylesheets="@buttonOfMenu.css" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="19.0" />
          </font></Button>
-      <Button layoutX="84.0" layoutY="370.0" mnemonicParsing="false" opacity="0.05" prefHeight="69.0" prefWidth="220.0" styleClass="buttonOpacity" stylesheets="@buttonOfMenu.css" textAlignment="CENTER">
+      <Button layoutX="84.0" layoutY="370.0" mnemonicParsing="false" opacity="0.3" prefHeight="69.0" prefWidth="220.0" styleClass="buttonOpacity" stylesheets="@buttonOfMenu.css" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button alignment="CENTER" layoutX="84.0" layoutY="108.0" mnemonicParsing="false" opacity="0.05" prefHeight="69.0" prefWidth="220.0" styleClass="buttonOpacity" stylesheets="@buttonOfMenu.css">
+      <Button alignment="CENTER" layoutX="84.0" layoutY="108.0" mnemonicParsing="false" opacity="0.3" prefHeight="69.0" prefWidth="220.0" styleClass="buttonOpacity" stylesheets="@buttonOfMenu.css" textFill="WHITE">
          <font>
             <Font size="19.0" />
          </font>
