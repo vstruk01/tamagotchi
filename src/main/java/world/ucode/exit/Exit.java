@@ -1,5 +1,22 @@
 package world.ucode.exit;
 
-public class Exit {
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import world.ucode.view.View;
 
+public class Exit {
+    @FXML
+    Label leave;
+    @FXML
+    Label stay;
+
+    @FXML
+    public void initialize() {
+        leave.setOnMouseClicked(e -> {
+            System.exit(0);
+        });
+        stay.setOnMouseClicked(e -> {
+            View.view(View.lastScene, View.lastTitle);
+        });
+    }
 }

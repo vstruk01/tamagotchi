@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import java.lang.String?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -11,16 +11,13 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="world.ucode.newGame.Choice">
    <children>
-      <ImageView fitHeight="881.0" fitWidth="885.0" layoutX="-385.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="672.0" fitWidth="507.0" layoutX="-2.0" layoutY="-172.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@space.jpeg" />
+            <Image url="@space1.jpg" />
          </image>
       </ImageView>
       <AnchorPane fx:id="paramMenu" layoutY="50.0" prefHeight="300.0" prefWidth="484.0" visible="false">
          <children>
-            <Button fx:id="buttonEasy" layoutY="250.0" mnemonicParsing="false" opacity="0.0" prefHeight="50.0" prefWidth="160.0" style="-fx-background-color: black;" />
-            <Button fx:id="buttonMiddle" layoutX="170.0" layoutY="250.0" mnemonicParsing="false" opacity="0.0" prefHeight="50.0" prefWidth="160.0" style="-fx-background-color: black;" />
-            <Button fx:id="buttonHard" layoutX="340.0" layoutY="250.0" mnemonicParsing="false" opacity="0.0" prefHeight="50.0" prefWidth="160.0" style="-fx-background-color: black;" />
             <Label fx:id="labelEasy" alignment="CENTER" layoutY="250.0" prefHeight="50.0" prefWidth="160.0" text="Easy" textFill="WHITE">
                <font>
                   <Font size="20.0" />
@@ -37,31 +34,36 @@
                </font>
             </Label>
             <TextField fx:id="fieldName" layoutY="125.0" opacity="0.7" prefHeight="60.0" prefWidth="500.0" promptText="Name Of Your Pet" />
+            <Label fx:id="errorName" alignment="CENTER" layoutX="50.0" layoutY="47.0" prefHeight="60.0" prefWidth="400.0" style="-fx-background-color: rgba(0, 0, 0, 0.8);" stylesheets="@styleBackLabel.css" text="This name already exists" textFill="RED" visible="false">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
-      <Button fx:id="backGroundType" mnemonicParsing="false" opacity="0.25" prefHeight="50.0" prefWidth="250.0" />
-      <Button fx:id="backGroundParam" layoutX="250.0" mnemonicParsing="false" opacity="0.0" prefHeight="50.0" prefWidth="250.0" />
-      <Button layoutX="75.0" layoutY="395.0" mnemonicParsing="false" opacity="0.2" prefHeight="60.0" prefWidth="100.0" />
-      <Button layoutX="325.0" layoutY="395.0" mnemonicParsing="false" opacity="0.2" prefHeight="60.0" prefWidth="100.0" />
-      <Label fx:id="typePet" alignment="CENTER" layoutY="2.0" prefHeight="50.0" prefWidth="250.0" text="Type" textFill="WHITE">
+      <Label fx:id="typePet" alignment="CENTER" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: rgba(255, 255, 255, 0.25);" text="Type" textFill="WHITE">
          <font>
             <Font size="21.0" />
          </font>
       </Label>
-      <Label fx:id="paramPet" alignment="CENTER" layoutX="251.0" prefHeight="50.0" prefWidth="250.0" text="Param" textFill="WHITE">
+      <Label fx:id="paramPet" alignment="CENTER" layoutX="250.0" prefHeight="50.0" prefWidth="250.0" text="Param" textFill="WHITE">
          <font>
             <Font size="21.0" />
          </font>
       </Label>
-      <Label fx:id="startGame" alignment="CENTER" layoutX="325.0" layoutY="395.0" prefHeight="60.0" prefWidth="100.0" text="Start" textFill="WHITE">
+      <Label fx:id="startGame" alignment="CENTER" layoutX="325.0" layoutY="395.0" prefHeight="60.0" prefWidth="100.0" styleClass="backBlackBH" stylesheets="@styleBackLabel.css" text="Start" textFill="WHITE">
          <font>
             <Font size="31.0" />
          </font>
       </Label>
-      <Label fx:id="backMenu" alignment="CENTER" layoutX="75.0" layoutY="395.0" prefHeight="60.0" prefWidth="100.0" text="Back" textFill="WHITE">
+      <Label fx:id="backMenu" alignment="CENTER" layoutX="75.0" layoutY="395.0" prefHeight="60.0" prefWidth="100.0" stylesheets="@styleBackLabel.css" text="Back" textFill="WHITE">
          <font>
             <Font size="31.0" />
          </font>
+         <styleClass>
+            <String fx:value="backBlackBM" />
+            <String fx:value="backBlackBH" />
+         </styleClass>
       </Label>
       <AnchorPane fx:id="typeMenu" layoutY="50.0" prefHeight="300.0" prefWidth="500.0">
          <children>
@@ -75,8 +77,6 @@
                   <Image url="@dog.png" />
                </image>
             </ImageView>
-            <Button fx:id="backGroundCat" mnemonicParsing="false" opacity="0.0" prefHeight="300.0" prefWidth="250.0" />
-            <Button fx:id="backGroundDog" layoutX="250.0" mnemonicParsing="false" opacity="0.0" prefHeight="300.0" prefWidth="250.0" />
             <Label fx:id="choiceCat" prefHeight="300.0" prefWidth="250.0" />
             <Label fx:id="choiceDog" layoutX="250.0" prefHeight="300.0" prefWidth="250.0" />
          </children>

@@ -19,6 +19,10 @@ public class View {
 
     public static HashMap<SceneType, Scene> scenes = new HashMap<SceneType, Scene>();
     public static Stage stage;
+    public static SceneType lastScene;
+    public static String lastTitle;
+    public static SceneType currScene;
+    public static String currTitle;
 
     public View(Stage stage) throws IOException {
         this.stage = stage;
@@ -47,13 +51,13 @@ public class View {
     }
 
     public static void view(SceneType type, String title) {
+        lastScene = currScene;
+        lastTitle = currTitle;
+        currScene = type;
+        currTitle = title;
         stage.setTitle(title);
         stage.setScene(scenes.get(type));
         stage.centerOnScreen();
         stage.show();
-//        stage.setTitle("Cute cat of space");
-//        stage.setScene(scenes.get(SceneType.MENU));
-//        stage.centerOnScreen();
-//        stage.show();
     }
 }
