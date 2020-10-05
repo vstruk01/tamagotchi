@@ -1,5 +1,9 @@
 package world.ucode.pets;
 
-public class Dog extends Pet {
+import world.ucode.types.Types;
 
+public class Dog extends Pet {
+    public Dog(Types.GameType gameType, String petName) {
+        super(gameType, Types.PetType.DOG, petName);
+    }
 }

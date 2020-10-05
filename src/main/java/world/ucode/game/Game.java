@@ -75,11 +75,10 @@ public class Game {
         cleanliness.getGraphicsContext2D().setFill(Color.YELLOW);
 
         health.getGraphicsContext2D().fillArc(0, 0, 80, 80, 210, 120, ArcType.OPEN);
-//        health.getGraphicsContext2D().strokeArc(0, 0, 80, 80, 170, 360, ArcType.OPEN);
         hunger.getGraphicsContext2D().fillArc(0, 0, 80, 80, 150, 240, ArcType.OPEN);
-        thirst.getGraphicsContext2D().fillArc(0, 0, 80, 80, 170, 10, ArcType.OPEN);
-        happiness.getGraphicsContext2D().fillArc(0, 0, 80, 80, 170, 50, ArcType.OPEN);
-        cleanliness.getGraphicsContext2D().fillArc(0, 0, 80, 80, 170, 360, ArcType.OPEN);
+        thirst.getGraphicsContext2D().fillArc(0, 0, 80, 80, 170, 200, ArcType.OPEN);
+        happiness.getGraphicsContext2D().fillArc(0, 0, 80, 80, 170, 200, ArcType.OPEN);
+        cleanliness.getGraphicsContext2D().fillArc(0, 0, 80, 80, 160, 220, ArcType.OPEN);
 
     }
 }

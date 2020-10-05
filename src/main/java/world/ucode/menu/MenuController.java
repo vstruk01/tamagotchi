@@ -2,13 +2,9 @@ package world.ucode.menu;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.input.MouseEvent;
-import world.ucode.load.Load;
 import world.ucode.view.View;
 
 public class MenuController {
-    final static Load l = new Load();
-
     @FXML
     private Label newGame;
 

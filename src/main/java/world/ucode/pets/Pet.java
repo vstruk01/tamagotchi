@@ -1,6 +1,6 @@
 package world.ucode.pets;
 
-import world.ucode.actions.*;
+import world.ucode.types.Types;
 
 public abstract class Pet {
     public double unitToDegree;
@@ -12,9 +12,23 @@ public abstract class Pet {
     public double thirst;
     public double cleanliness;
     public String name;
+    public Types.PetType type;
 
-    public void setHealth(double health) {
-        this.health = health;
+    public Pet(Types.GameType gameType, Types.PetType petType, String petName) {
+        this.type = petType;
+        if (gameType == Types.GameType.HARD) {
+            this.setPoint(120);
+        } else if (gameType == Types.GameType.MIDDLE) {
+            this.setPoint(180);
+        } else {
+            this.setPoint(240);
+        }
+        this.cleanliness = maxUnit;
+        this.health = maxUnit;
+        this.happiness = maxUnit;
+        this.hunger = maxUnit;
+        this.thirst = maxUnit;
+        this.name = petName;
     }
 
     public void setName(String name) {

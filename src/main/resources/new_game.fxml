@@ -18,25 +18,50 @@
       </ImageView>
       <AnchorPane fx:id="paramMenu" layoutY="50.0" prefHeight="300.0" prefWidth="484.0" visible="false">
          <children>
-            <Label fx:id="labelEasy" alignment="CENTER" layoutY="250.0" prefHeight="50.0" prefWidth="160.0" text="Easy" textFill="WHITE">
+            <Label fx:id="labelEasy" alignment="CENTER" layoutX="90.0" layoutY="180.0" prefHeight="50.0" prefWidth="130.0" styleClass="backBlackBM" stylesheets="@styleBackLabel.css" text="Easy" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="labelMiddle" alignment="CENTER" layoutX="170.0" layoutY="250.0" prefHeight="50.0" prefWidth="160.0" text="Middle" textFill="#f8f8f8">
+            <Label fx:id="labelMiddle" alignment="CENTER" layoutX="230.0" layoutY="180.0" prefHeight="50.0" prefWidth="130.0" styleClass="backBlackBM" stylesheets="@styleBackLabel.css" text="Middle" textFill="#f8f8f8">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="labelHard" alignment="CENTER" layoutX="340.0" layoutY="250.0" prefHeight="50.0" prefWidth="160.0" text="Hard" textFill="WHITE">
+            <Label fx:id="labelHard" alignment="CENTER" layoutX="370.0" layoutY="180.0" prefHeight="50.0" prefWidth="130.0" styleClass="backBlackBM" stylesheets="@styleBackLabel.css" text="Hard" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <TextField fx:id="fieldName" layoutY="125.0" opacity="0.7" prefHeight="60.0" prefWidth="500.0" promptText="Name Of Your Pet" />
-            <Label fx:id="errorName" alignment="CENTER" layoutX="50.0" layoutY="47.0" prefHeight="60.0" prefWidth="400.0" style="-fx-background-color: rgba(0, 0, 0, 0.8);" stylesheets="@styleBackLabel.css" text="This name already exists" textFill="RED" visible="false">
+            <TextField fx:id="fieldName" layoutY="90.0" opacity="0.7" prefHeight="60.0" prefWidth="500.0" promptText="Name Of Your Pet" />
+            <Label fx:id="errorName" alignment="CENTER" layoutX="50.0" layoutY="20.0" prefHeight="60.0" prefWidth="400.0" style="-fx-background-color: rgba(0, 0, 0, 0.8);" stylesheets="@styleBackLabel.css" text="This name already exists" textFill="RED" visible="false">
                <font>
                   <Font size="22.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutY="180.0" prefHeight="50.0" prefWidth="70.0" styleClass="backBlackWH" stylesheets="@styleBackLabel.css" text="Type">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutY="260.0" prefHeight="50.0" prefWidth="70.0" styleClass="backBlackWH" stylesheets="@styleBackLabel.css" text="HP">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="90.0" layoutY="260.0" prefHeight="50.0" prefWidth="130.0" styleClass="backBlackWM" stylesheets="@styleBackLabel.css" text="120">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="230.0" layoutY="260.0" prefHeight="50.0" prefWidth="130.0" styleClass="backBlackWM" stylesheets="@styleBackLabel.css" text="180">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="370.0" layoutY="260.0" prefHeight="50.0" prefWidth="130.0" styleClass="backBlackWM" stylesheets="@styleBackLabel.css" text="240">
+               <font>
+                  <Font size="31.0" />
                </font>
             </Label>
          </children>
