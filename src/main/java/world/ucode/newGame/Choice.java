@@ -79,10 +79,8 @@ public class Choice {
                         errorName.setVisible(true);
                         toParam();
                     }
-                } catch (SQLException throwables) {
+                } catch (SQLException | ClassNotFoundException throwables) {
                     throwables.printStackTrace();
-                } catch (ClassNotFoundException e) {
-                    e.printStackTrace();
                 }
             }
         });

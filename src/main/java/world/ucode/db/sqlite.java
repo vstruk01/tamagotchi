@@ -8,7 +8,6 @@ public class sqlite extends DataBase {
     Connection con;
     Statement stmt;
 
-
     public sqlite() throws ClassNotFoundException, SQLException {
         Class.forName("org.sqlite.JDBC");
         con = DriverManager.getConnection("jdbc:sqlite:src/main/resources/Pets.db");
@@ -24,7 +23,6 @@ public class sqlite extends DataBase {
                                                            "cleanliness REAL, " +
                                                            "hunger      REAL, " +
                                                            "happiness   REAL);");
-        System.out.println("ok");
     }
 
 
@@ -39,15 +37,25 @@ public class sqlite extends DataBase {
             stmtPrepare.setDouble(5, pet.getHunger());
             stmtPrepare.setDouble(6, pet.getHappiness());
             stmtPrepare.executeUpdate();
-            System.out.println("ok add Pet");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
 
     @Override
-    public void savePet() {
-
+    public void savePet(Pet pet) {
+        try {
+            PreparedStatement stmtPrepare = con.prepareStatement("UPDATE Pets SET health = ?, thirst = ?,cleanliness = ?, hunger = ?, happiness = ? WHERE name = ?");
+            stmtPrepare.setDouble(1, pet.getHealth());
+            stmtPrepare.setDouble(2, pet.getThirst());
+            stmtPrepare.setDouble(3, pet.getCleanliness());
+            stmtPrepare.setDouble(4, pet.getHunger());
+            stmtPrepare.setDouble(5, pet.getHappiness());
+            stmtPrepare.setString(6, pet.getName());
+            stmtPrepare.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override
@@ -58,18 +66,24 @@ public class sqlite extends DataBase {
             ResultSet rs = stmtPrepare.executeQuery();
 
             if (rs.next()) {
+                rs.close();
                 return true;
             }
+            rs.close();
             return false;
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        System.out.println("hello3");
         return true;
     }
 
     @Override
     public Pet[] getAllPet() {
         return new Pet[0];
+    }
+
+    @Override
+    public void deletePet(Pet pet) {
+
     }
 }

@@ -5,7 +5,6 @@ import world.ucode.types.Types;
 public abstract class Pet {
     public double unitToDegree;
     public double maxUnit;
-    public double toGetUnit;
     public double health;
     public double happiness;
     public double hunger;
@@ -13,6 +12,9 @@ public abstract class Pet {
     public double cleanliness;
     public String name;
     public Types.PetType type;
+//    public int age;
+
+    public double giveScale = 30;
 
     public Pet(Types.GameType gameType, Types.PetType petType, String petName) {
         this.type = petType;
@@ -36,38 +38,38 @@ public abstract class Pet {
     }
 
     public void play() {
-        if (this.happiness + this.toGetUnit >  this.maxUnit) {
+        if (this.happiness + this.giveScale >  this.maxUnit) {
             this.happiness = maxUnit;
         } else {
-            this.happiness += this.toGetUnit;
+            this.happiness += this.giveScale;
         }
     };
     public void feeds() {
-        if (this.hunger + this.toGetUnit >  this.maxUnit) {
+        if (this.hunger + this.giveScale >  this.maxUnit) {
             this.hunger = maxUnit;
         } else {
-            this.hunger += this.toGetUnit;
+            this.hunger += this.giveScale;
         }
     };
     public void giveWater() {
-        if (this.thirst + this.toGetUnit >  this.maxUnit) {
+        if (this.thirst + this.giveScale >  this.maxUnit) {
             this.thirst = maxUnit;
         } else {
-            this.thirst += this.toGetUnit;
+            this.thirst += this.giveScale;
         }
     };
     public void giveMedicine() {
-        if (this.health + this.toGetUnit >  this.maxUnit) {
+        if (this.health + this.giveScale >  this.maxUnit) {
             this.health = maxUnit;
         } else {
-            this.health += this.toGetUnit;
+            this.health += this.giveScale;
         }
     };
     public void cleanUp() {
-        if (this.cleanliness + this.toGetUnit >  this.maxUnit) {
+        if (this.cleanliness + this.giveScale >  this.maxUnit) {
             this.cleanliness = maxUnit;
         } else {
-            this.cleanliness += this.toGetUnit;
+            this.cleanliness += this.giveScale;
         }
     };
 
