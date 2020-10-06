@@ -4,15 +4,20 @@ import javafx.animation.Animation;
 import javafx.animation.AnimationTimer;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.scene.control.Label;
 import javafx.util.Duration;
+import world.ucode.db.sqlite;
 import world.ucode.pets.Cat;
 import world.ucode.pets.Dog;
 import world.ucode.pets.Pet;
 import world.ucode.types.Types;
+import java.sql.SQLException;
 
 public class GameModel {
     public static Pet pet;
-    public boolean startGame(Types.GameType gameType, Types.PetType petType, String petName) {
+    public sqlite sql;
+
+    public boolean startGame(Types.GameType gameType, Types.PetType petType, String petName) throws SQLException, ClassNotFoundException {
         if (petName.equals("vlad")) {
             return false;
         }
@@ -21,21 +26,16 @@ public class GameModel {
         } else if (petType == Types.PetType.DOG) {
             pet = new Dog(gameType, petName);
         }
-        Ешьук
-        AnimationTimer myLine = new Myline();
+//        Timeline myLine = new Timeline();
 //        myLine.setCycleCount(Timeline.INDEFINITE);
 //        myLine.setAutoReverse(true);
-        myLine.start();
+//        myLine.play();
+        sql = new sqlite();
+        sql.addPet(pet);
         return true;
     }
 
-    public class Myline extends AnimationTimer {
-        public void handle(long now) {
-            pet.happiness -= 5;
-            pet.cleanliness -= 5;
-            pet.health -= 5;
-            pet.hunger -= 5;
-            pet.thirst -= 5;
-        }
-    }
+//    public Label[] loadSave() {
+//        return
+//    }
 }

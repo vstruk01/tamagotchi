@@ -8,6 +8,8 @@ import world.ucode.main.Main;
 import world.ucode.types.Types;
 import world.ucode.view.View;
 
+import java.sql.SQLException;
+
 
 public class Choice {
     public Types.GameType gameType = Types.GameType.DEFAULT;
@@ -67,16 +69,22 @@ public class Choice {
         startGame.setOnMouseClicked(MouseEvent -> {
             if (petType == Types.PetType.DEFAULT) {
                 toType();
-                return;
-            } else if (gameType == Types.GameType.DEFAULT) {
+            } else if (gameType == Types.GameType.DEFAULT || fieldName.getText().equals("")) {
                 toParam();
-                return;
-            } else if (Main.gameModel.startGame(gameType, petType, fieldName.getText())) {
-                defaultSettings();
-                View.view(View.SceneType.GAME, "Game");
             } else {
-                errorName.setVisible(true);
-                toParam();
+                try {
+                    if (Main.gameModel.startGame(gameType, petType, fieldName.getText())) {
+                        defaultSettings();
+                        View.view(View.SceneType.GAME, "Game");
+                    } else {
+                        errorName.setVisible(true);
+                        toParam();
+                    }
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
