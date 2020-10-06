@@ -11,7 +11,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="world.ucode.game.Game">
    <children>
-      <AnchorPane fx:id="playPage">
+      <AnchorPane fx:id="playPage" visible="false">
          <children>
             <ImageView fitHeight="1073.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" y="-465.0">
                <image>
@@ -100,8 +100,13 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="deadPage" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: black;" visible="false">
+      <AnchorPane fx:id="deadPage" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: black;">
          <children>
+            <ImageView fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@cateyes.jpg" />
+               </image>
+            </ImageView>
             <Label alignment="CENTER" prefHeight="200.0" prefWidth="600.0" text="YOU DIED" textFill="RED">
                <font>
                   <Font size="96.0" />

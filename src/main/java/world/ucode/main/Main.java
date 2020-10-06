@@ -7,11 +7,12 @@ import world.ucode.view.View;
 
 
 public class Main extends Application {
-    public static GameModel gameModel = new GameModel();
+    public static GameModel gameModel;
 
     @Override
     public void start(Stage stage) throws Exception {
         View view = new View(stage);
+        gameModel = new GameModel();
         View.view(View.SceneType.MENU, "Cute cat of space");
     }
 

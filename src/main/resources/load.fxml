@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<ScrollPane fx:controller="world.ucode.load.Load" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="465.0" prefWidth="623.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="world.ucode.load.Load">
   <content>
-    <AnchorPane fx:id="anchor" minHeight="1000" minWidth="1000" prefHeight="463.0" prefWidth="597.0" />
+    <AnchorPane fx:id="anchor" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0">
+         <children>
+            <Button layoutX="30.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="250.0" styleClass="backBlackBH" stylesheets="@styleBackLabel.css" text="BACK" textFill="WHITE">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Button>
+            <Button layoutX="320.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="250.0" styleClass="backBlackBH" stylesheets="@styleBackLabel.css" text="PLAY" textFill="WHITE">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Button>
+         </children></AnchorPane>
   </content>
 </ScrollPane>

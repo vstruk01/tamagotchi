@@ -2,6 +2,7 @@ package world.ucode.db;
 
 import world.ucode.pets.Pet;
 
+import java.util.ArrayList;
 import java.sql.*;
 
 public class sqlite extends DataBase {
@@ -78,8 +79,20 @@ public class sqlite extends DataBase {
     }
 
     @Override
-    public Pet[] getAllPet() {
-        return new Pet[0];
+    public ArrayList<Pet> getAllPet() {
+        ArrayList<Pet> pets = new ArrayList<Pet>();
+        try {
+            PreparedStatement stmtPrepare = con.prepareStatement("SELECT * FROM Pets");;
+            ResultSet rs = stmtPrepare.executeQuery();;
+
+
+            while (rs.next()) {
+
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return pets;
     }
 
     @Override

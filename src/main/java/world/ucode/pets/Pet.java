@@ -12,7 +12,6 @@ public abstract class Pet {
     public double cleanliness;
     public String name;
     public Types.PetType type;
-//    public int age;
 
     public double giveScale = 30;
 

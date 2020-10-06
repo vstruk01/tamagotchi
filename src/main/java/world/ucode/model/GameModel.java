@@ -21,9 +21,15 @@ public class GameModel {
     private Timeline timeLineReduce;
     Game game;
 
-    public boolean startGame(Types.GameType gameType, Types.PetType petType, String petName) throws SQLException, ClassNotFoundException {
-        sql = new sqlite();
+    public GameModel() {
+        try {
+            sql = new sqlite();
+        } catch (SQLException | ClassNotFoundException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 
+    public boolean startGame(Types.GameType gameType, Types.PetType petType, String petName) throws SQLException, ClassNotFoundException {
         if (sql.isExistsPet(petName)) {
             return false;
         }
@@ -33,6 +39,8 @@ public class GameModel {
             this.pet = new Dog(gameType, petName);
         }
         game = View.loaders.get(View.SceneType.GAME).getController();
+        game.playPage.setVisible(true);
+        game.deadPage.setVisible(false);
         game.nameScreen.setText(GameModel.pet.getName());
         sql.addPet(pet);
         timeLineReduce = getTimeLineReduce();
@@ -61,7 +69,6 @@ public class GameModel {
     }
 
     public void reduce() {
-        Game game = View.loaders.get(View.SceneType.GAME).getController();
         pet.cleanliness -= 1;
         pet.health -= 1;
         pet.happiness -= 1;
