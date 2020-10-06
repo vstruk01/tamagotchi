@@ -63,8 +63,8 @@
       <Canvas fx:id="health" height="80.0" layoutX="30.0" layoutY="150.0" width="80.0" />
       <Canvas fx:id="hunger" height="80.0" layoutX="30.0" layoutY="270.0" width="80.0" />
       <Canvas fx:id="thirst" height="80.0" layoutX="30.0" layoutY="390.0" width="80.0" />
-      <Canvas fx:id="happiness" height="80.0" layoutX="510.0" layoutY="150.0" width="80.0" />
-      <Canvas fx:id="cleanliness" height="80.0" layoutX="510.0" layoutY="270.0" width="80.0" />
+      <Canvas fx:id="happiness" height="80.0" layoutX="490.0" layoutY="150.0" width="80.0" />
+      <Canvas fx:id="cleanliness" height="80.0" layoutX="490.0" layoutY="270.0" width="80.0" />
       <Text fill="WHITE" layoutX="43.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="health">
          <font>
             <Font size="16.0" />
@@ -80,15 +80,20 @@
             <Font size="16.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="512.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="happiness">
+      <Text fill="WHITE" layoutX="490.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="happiness">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="512.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cleanliness">
+      <Text fill="WHITE" layoutX="490.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cleanliness">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
+      <Label alignment="CENTER" layoutX="458.0" layoutY="440.0" prefHeight="60.0" prefWidth="140.0" styleClass="backBlackBH" stylesheets="@styleBackLabel.css" text="Name" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
    </children>
 </Pane>

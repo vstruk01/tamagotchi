@@ -4,12 +4,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import java.sql.SQLException;
+
 import world.ucode.main.Main;
 import world.ucode.types.Types;
 import world.ucode.view.View;
-
-import java.sql.SQLException;
-
 
 public class Choice {
     public Types.GameType gameType = Types.GameType.DEFAULT;

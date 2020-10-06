@@ -1,7 +1,6 @@
 package world.ucode.view;
 
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -18,6 +17,7 @@ public class View {
     };
 
     public static HashMap<SceneType, Scene> scenes = new HashMap<SceneType, Scene>();
+    public static HashMap<SceneType, FXMLLoader> loaders = new HashMap<SceneType, FXMLLoader>();
     public static Stage stage;
     public static SceneType lastScene;
     public static String lastTitle;
@@ -29,24 +29,24 @@ public class View {
 
         this.stage.setResizable(false);
         if (scenes.isEmpty()) {
-            Parent pMenuGame = FXMLLoader.load(getClass().getResource("/menu.fxml"));
-            Parent pGame = FXMLLoader.load(getClass().getResource("/game.fxml"));
-            Parent pLoad = FXMLLoader.load(getClass().getResource("/load.fxml"));
-            Parent pExit = FXMLLoader.load(getClass().getResource("/exit.fxml"));
-            Parent pNewGame = FXMLLoader.load(getClass().getResource("/new_game.fxml"));
+            this.addScene(SceneType.MENU, "/menu.fxml");
+            this.addScene(SceneType.GAME, "/game.fxml");
+            this.addScene(SceneType.LOAD, "/load.fxml");
+            this.addScene(SceneType.EXIT, "/exit.fxml");
+            this.addScene(SceneType.NEW_GAME, "/new_game.fxml");
+        }
+    }
 
+    private void addScene(SceneType type, String url) throws IOException {
+        try {
+            FXMLLoader loader = new FXMLLoader();
 
-            Scene sMenuGame = new Scene(pMenuGame);
-            Scene sGame = new Scene(pGame);
-            Scene sLoadGame = new Scene(pLoad);
-            Scene sExit = new Scene(pExit);
-            Scene sNewGame = new Scene(pNewGame);
+            loader.setLocation(getClass().getResource(url));
 
-            scenes.put(SceneType.MENU, sMenuGame);
-            scenes.put(SceneType.GAME, sGame);
-            scenes.put(SceneType.LOAD, sLoadGame);
-            scenes.put(SceneType.EXIT, sExit);
-            scenes.put(SceneType.NEW_GAME, sNewGame);
+            loaders.put(type, loader);
+            scenes.put(type, new Scene(loader.load()));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
         }
     }
 

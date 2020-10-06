@@ -4,7 +4,7 @@ import world.ucode.pets.Pet;
 
 import java.sql.*;
 
-public class sqlite implements DataBase {
+public class sqlite extends DataBase {
     Connection con;
     Statement stmt;
 
@@ -40,10 +40,8 @@ public class sqlite implements DataBase {
             stmtPrepare.setDouble(6, pet.getHappiness());
             stmtPrepare.executeUpdate();
             System.out.println("ok add Pet");
-        } catch (SQLDataException e) {
+        } catch (SQLException e) {
             System.out.println(e.getMessage());
-        } catch (SQLException throwables) {
-            System.out.println(throwables.getMessage());
         }
     }
 
@@ -53,13 +51,21 @@ public class sqlite implements DataBase {
     }
 
     @Override
-    public String[] getCurrName() {
-        return new String[0];
-    }
-
-    @Override
     public boolean isExistsPet(String namePet) {
+        try {
+            PreparedStatement stmtPrepare = con.prepareStatement("SELECT id from Pets WHERE name = ? LIMIT 1");
+            stmtPrepare.setString(1, namePet);
+            ResultSet rs = stmtPrepare.executeQuery();
 
+            if (rs.next()) {
+                return true;
+            }
+            return false;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println("hello3");
+        return true;
     }
 
     @Override

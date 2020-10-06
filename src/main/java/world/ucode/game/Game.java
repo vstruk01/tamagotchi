@@ -6,46 +6,51 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.ArcType;
+
+import world.ucode.main.Main;
+import world.ucode.model.GameModel;
 import world.ucode.view.View;
 
 public class Game {
     @FXML
-    Label giveMedicine;
+    public Label giveMedicine;
     @FXML
-    Label feed;
+    public Label feed;
     @FXML
-    Label giveWater;
+    public Label giveWater;
     @FXML
-    Label play;
+    public Label play;
     @FXML
-    Label cleanUp;
+    public Label cleanUp;
 
     @FXML
-    Label exit;
+    public Label exit;
     @FXML
-    Label save;
+    public Label save;
     @FXML
-    Label menu;
+    public Label menu;
 
     @FXML
-    Canvas health;
+    public Canvas health;
     @FXML
-    Canvas hunger;
+    public Canvas hunger;
     @FXML
-    Canvas thirst;
+    public Canvas thirst;
     @FXML
-    Canvas happiness;
+    public Canvas happiness;
     @FXML
-    Canvas cleanliness;
+    public Canvas cleanliness;
 
     @FXML
     public void initialize() {
         menu.setOnMouseClicked(e -> {
             save.setText("Save");
+            Main.gameModel.StopTimeLine();
             View.view(View.SceneType.MENU, "Cute cat of space");
         });
         exit.setOnMouseClicked(e -> {
             save.setText("Save");
+            Main.gameModel.StopTimeLine();
             View.view(View.SceneType.EXIT, "Exit");
         });
         save.setOnMouseClicked(e -> {
@@ -73,12 +78,12 @@ public class Game {
         thirst.getGraphicsContext2D().setFill(Color.YELLOW);
         happiness.getGraphicsContext2D().setFill(Color.YELLOW);
         cleanliness.getGraphicsContext2D().setFill(Color.YELLOW);
-
-        health.getGraphicsContext2D().fillArc(0, 0, 80, 80, 210, 120, ArcType.OPEN);
-        hunger.getGraphicsContext2D().fillArc(0, 0, 80, 80, 150, 240, ArcType.OPEN);
-        thirst.getGraphicsContext2D().fillArc(0, 0, 80, 80, 170, 200, ArcType.OPEN);
-        happiness.getGraphicsContext2D().fillArc(0, 0, 80, 80, 170, 200, ArcType.OPEN);
-        cleanliness.getGraphicsContext2D().fillArc(0, 0, 80, 80, 160, 220, ArcType.OPEN);
+//
+//        health.getGraphicsContext2D().fillArc(0, 0, 80, 80, 0, 360, ArcType.OPEN);
+//        hunger.getGraphicsContext2D().fillArc(0, 0, 80, 80, 0, 360, ArcType.OPEN);
+//        thirst.getGraphicsContext2D().fillArc(0, 0, 80, 80, 0, 360, ArcType.OPEN);
+//        happiness.getGraphicsContext2D().fillArc(0, 0, 80, 80, 0, 360, ArcType.OPEN);
+//        cleanliness.getGraphicsContext2D().fillArc(0, 0, 80, 80, 0, 360, ArcType.OPEN);
 
     }
 }
