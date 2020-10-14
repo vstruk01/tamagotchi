@@ -1,4 +1,4 @@
-package world.ucode.load;
+package world.ucode.Controller.load;
 
 
 import javafx.fxml.FXML;

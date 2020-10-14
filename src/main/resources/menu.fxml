@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="MenuController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="579.0" prefWidth="858.0" styleClass="bodybg" stylesheets="@styleMenu.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="world.ucode.menu.MenuController">
+<Pane fx:id="MenuController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="579.0" prefWidth="858.0" styleClass="bodybg" stylesheets="@styleMenu.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="world.ucode.Controller.menu.MenuController">
    <children>
       <Label id="newGame" fx:id="newGame" alignment="CENTER" layoutX="84.0" layoutY="108.0" prefHeight="69.0" prefWidth="220.0" styleClass="backBlackWL" stylesheets="@styleBackLabel.css" text="New Game" textAlignment="CENTER" textFill="WHITE">
          <font>

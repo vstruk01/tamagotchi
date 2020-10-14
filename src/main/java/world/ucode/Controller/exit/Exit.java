@@ -1,4 +1,4 @@
-package world.ucode.exit;
+package world.ucode.Controller.exit;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

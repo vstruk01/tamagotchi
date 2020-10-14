@@ -1,5 +1,5 @@
 
-package world.ucode.game;
+package world.ucode.Controller.game;
 
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
@@ -8,7 +8,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 
 import world.ucode.main.Main;
-import world.ucode.model.GameModel;
+import world.ucode.Model.GameModel;
 import world.ucode.view.View;
 
 public class Game {

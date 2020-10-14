@@ -1,6 +1,6 @@
-package world.ucode.db;
+package world.ucode.Model.db;
 
-import world.ucode.pets.Pet;
+import world.ucode.Model.pets.Pet;
 
 import java.util.ArrayList;
 

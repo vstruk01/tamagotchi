@@ -1,4 +1,4 @@
-package world.ucode.newGame;
+package world.ucode.Controller.newGame;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -7,7 +7,7 @@ import javafx.scene.layout.AnchorPane;
 import java.sql.SQLException;
 
 import world.ucode.main.Main;
-import world.ucode.types.Types;
+import world.ucode.Model.types.Types;
 import world.ucode.view.View;
 
 public class Choice {

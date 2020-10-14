@@ -1,16 +1,16 @@
-package world.ucode.model;
+package world.ucode.Model;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.shape.ArcType;
 import javafx.util.Duration;
-import world.ucode.db.sqlite;
-import world.ucode.game.Game;
-import world.ucode.pets.Cat;
-import world.ucode.pets.Dog;
-import world.ucode.pets.Pet;
-import world.ucode.types.Types;
+import world.ucode.Model.db.sqlite;
+import world.ucode.Controller.game.Game;
+import world.ucode.Model.pets.Cat;
+import world.ucode.Model.pets.Dog;
+import world.ucode.Model.pets.Pet;
+import world.ucode.Model.types.Types;
 import world.ucode.view.View;
 
 import java.sql.SQLException;

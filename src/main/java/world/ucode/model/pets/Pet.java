@@ -1,6 +1,6 @@
-package world.ucode.pets;
+package world.ucode.Model.pets;
 
-import world.ucode.types.Types;
+import world.ucode.Model.types.Types;
 
 public abstract class Pet {
     public double unitToDegree;

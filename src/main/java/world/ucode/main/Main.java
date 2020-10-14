@@ -2,7 +2,7 @@ package world.ucode.main;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-import world.ucode.model.GameModel;
+import world.ucode.Model.GameModel;
 import world.ucode.view.View;
 
 

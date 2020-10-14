@@ -1,4 +1,4 @@
-package world.ucode.menu;
+package world.ucode.Controller.menu;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

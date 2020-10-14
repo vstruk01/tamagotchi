@@ -1,4 +1,4 @@
-package world.ucode.types;
+package world.ucode.Model.types;
 
 public class Types {
     public enum GameType {
