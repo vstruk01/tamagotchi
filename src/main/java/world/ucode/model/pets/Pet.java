@@ -11,7 +11,8 @@ public abstract class Pet {
     public double thirst;
     public double cleanliness;
     public String name;
-    public Types.PetType type;
+    private Types.PetType type;
+    private Types.GameType typeGame;
 
     public double giveScale = 30;
 
@@ -30,6 +31,14 @@ public abstract class Pet {
         this.hunger = maxUnit;
         this.thirst = maxUnit;
         this.name = petName;
+    }
+
+    public Types.PetType getType() {
+        return type;
+    }
+
+    public Types.GameType getTypeGame() {
+        return typeGame;
     }
 
     public void setName(String name) {

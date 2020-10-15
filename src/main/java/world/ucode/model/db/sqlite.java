@@ -17,26 +17,31 @@ public class sqlite extends DataBase {
 
     public void createTablePets() throws SQLException {
         stmt = con.createStatement();
-        stmt.execute("CREATE  TABLE IF NOT EXISTS 'Pets'(id         INTEGER  PRIMARY KEY, " +
-                                                           "name        TEXT, " +
-                                                           "health      REAL, " +
-                                                           "thirst      REAL," +
-                                                           "cleanliness REAL, " +
-                                                           "hunger      REAL, " +
-                                                           "happiness   REAL);");
+        stmt.execute("CREATE  TABLE IF NOT EXISTS 'Pets'(   id         INTEGER  PRIMARY KEY, " +
+                                                           "name        TEXT, "   +
+                                                           "health      REAL, "   +
+                                                           "thirst      REAL,"    +
+                                                           "cleanliness REAL, "   +
+                                                           "hunger      REAL, "   +
+                                                           "happiness   REAL, "   +
+                                                           "typeGame    INTEGER, "+
+                                                           "typePet     INTEGER);");
     }
 
 
     @Override
     public void addPet(Pet pet) {
         try {
-            PreparedStatement stmtPrepare = con.prepareStatement("INSERT INTO Pets(name, health, thirst, cleanliness, hunger, happiness)VALUES (?, ?, ?, ?, ?, ?)");
+            PreparedStatement stmtPrepare = con.prepareStatement("INSERT INTO Pets(name, health, thirst, cleanliness, hunger, happiness, typeGame, typePet)VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
             stmtPrepare.setString(1, pet.getName());
             stmtPrepare.setDouble(2, pet.getHealth());
             stmtPrepare.setDouble(3, pet.getThirst());
             stmtPrepare.setDouble(4, pet.getCleanliness());
             stmtPrepare.setDouble(5, pet.getHunger());
             stmtPrepare.setDouble(6, pet.getHappiness());
+            stmtPrepare.setInt(7, pet.getTypeGame().getValue());
+            stmtPrepare.setInt(8, pet.getType().getValue());
+
             stmtPrepare.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());

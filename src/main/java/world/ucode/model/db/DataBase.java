@@ -10,5 +10,4 @@ public abstract class DataBase {
     public abstract void addPet(Pet pet);
     public abstract void savePet(Pet pet);
     public abstract void deletePet(Pet pet);
-
 }
