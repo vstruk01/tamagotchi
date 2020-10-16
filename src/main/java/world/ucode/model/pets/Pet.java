@@ -11,16 +11,16 @@ public abstract class Pet {
     public double thirst;
     public double cleanliness;
     public String name;
-    private Types.PetType type;
-    private Types.GameType typeGame;
+    private int type;
+    private int typeGame;
 
     public double giveScale = 30;
 
-    public Pet(Types.GameType gameType, Types.PetType petType, String petName) {
+    public Pet(int gameType, int petType, String petName) {
         this.type = petType;
-        if (gameType == Types.GameType.HARD) {
+        if (gameType == Types.GameType.HARD.getValue()) {
             this.setPoint(120);
-        } else if (gameType == Types.GameType.MIDDLE) {
+        } else if (gameType == Types.GameType.MIDDLE.getValue()) {
             this.setPoint(180);
         } else {
             this.setPoint(240);
@@ -33,11 +33,11 @@ public abstract class Pet {
         this.name = petName;
     }
 
-    public Types.PetType getType() {
+    public int getType() {
         return type;
     }
 
-    public Types.GameType getTypeGame() {
+    public int getTypeGame() {
         return typeGame;
     }
 

@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 import world.ucode.main.Main;
 import world.ucode.Model.types.Types;
-import world.ucode.view.View;
+import world.ucode.View.View;
 
 public class Choice {
     public Types.GameType gameType = Types.GameType.DEFAULT;
@@ -72,7 +72,7 @@ public class Choice {
                 toParam();
             } else {
                 try {
-                    if (Main.gameModel.startGame(gameType, petType, fieldName.getText())) {
+                    if (Main.gameModel.startGame(gameType.getValue(), petType.getValue(), fieldName.getText())) {
                         defaultSettings();
                         View.view(View.SceneType.GAME, "Game");
                     } else {

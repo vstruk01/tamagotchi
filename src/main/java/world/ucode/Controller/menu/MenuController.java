@@ -2,7 +2,7 @@ package world.ucode.Controller.menu;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import world.ucode.view.View;
+import world.ucode.View.View;
 
 public class MenuController {
     @FXML

@@ -8,8 +8,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 
 import world.ucode.main.Main;
-import world.ucode.Model.GameModel;
-import world.ucode.view.View;
+import world.ucode.Model.model.GameModel;
+import world.ucode.View.View;
 
 public class Game {
     @FXML

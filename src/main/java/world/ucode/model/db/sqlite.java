@@ -39,8 +39,8 @@ public class sqlite extends DataBase {
             stmtPrepare.setDouble(4, pet.getCleanliness());
             stmtPrepare.setDouble(5, pet.getHunger());
             stmtPrepare.setDouble(6, pet.getHappiness());
-            stmtPrepare.setInt(7, pet.getTypeGame().getValue());
-            stmtPrepare.setInt(8, pet.getType().getValue());
+            stmtPrepare.setInt(7, pet.getTypeGame());
+            stmtPrepare.setInt(8, pet.getType());
 
             stmtPrepare.executeUpdate();
         } catch (SQLException e) {
@@ -91,9 +91,9 @@ public class sqlite extends DataBase {
             ResultSet rs = stmtPrepare.executeQuery();;
 
 
-            while (rs.next()) {
-
-            }
+//            while (rs.next()) {
+//
+//            }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }

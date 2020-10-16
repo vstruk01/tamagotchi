@@ -1,4 +1,4 @@
-package world.ucode.Model;
+package world.ucode.Model.model;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -11,7 +11,7 @@ import world.ucode.Model.pets.Cat;
 import world.ucode.Model.pets.Dog;
 import world.ucode.Model.pets.Pet;
 import world.ucode.Model.types.Types;
-import world.ucode.view.View;
+import world.ucode.View.View;
 
 import java.sql.SQLException;
 
@@ -29,13 +29,13 @@ public class GameModel {
         }
     }
 
-    public boolean startGame(Types.GameType gameType, Types.PetType petType, String petName) throws SQLException, ClassNotFoundException {
+    public boolean startGame(int gameType, int petType, String petName) throws SQLException, ClassNotFoundException {
         if (sql.isExistsPet(petName)) {
             return false;
         }
-        if (petType == Types.PetType.CAT) {
+        if (petType == Types.PetType.CAT.getValue()) {
             this.pet = new Cat(gameType, petName);
-        } else if (petType == Types.PetType.DOG) {
+        } else if (petType == Types.PetType.DOG.getValue()) {
             this.pet = new Dog(gameType, petName);
         }
         game = View.loaders.get(View.SceneType.GAME).getController();

@@ -22,11 +22,13 @@ public class Types {
         CAT(1),
         DEFAULT(2);
 
-        private final int value;
+        public int value;
 
         private PetType(int value) {
             this.value = value;
         }
+
+
 
         public int getValue() {
             return value;
