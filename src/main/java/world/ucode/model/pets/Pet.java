@@ -1,18 +1,17 @@
 package world.ucode.Model.pets;
 
 public abstract class Pet {
-    public double unitToDegree;
-    public double maxUnit;
-    public double health;
-    public double happiness;
-    public double hunger;
-    public double thirst;
-    public double cleanliness;
-    public String name;
+    private double unitToDegree;
+    private double maxUnit;
+    private double health;
+    private double happiness;
+    private double hunger;
+    private double thirst;
+    private double cleanliness;
+    private String name;
     private int type;
     private int typeGame;
-
-    public double giveScale;
+    private double giveScale;
 
     public Pet(int typeGame, int petType, String petName) {
         this.type = petType;
@@ -39,18 +38,8 @@ public abstract class Pet {
         this.name = petName;
     }
 
-    public int getType() {
-        return type;
-    }
 
-    public int getTypeGame() {
-        return typeGame;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
+    // actions of pet
     public void play() {
         if (this.happiness + this.giveScale >  this.maxUnit) {
             this.happiness = maxUnit;
@@ -88,10 +77,13 @@ public abstract class Pet {
     };
 
     //setters
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public void setCleanliness(double cleanliness) {
         this.cleanliness = cleanliness;
     }
-
 
     public void setHappiness(double happiness) {
         this.happiness = happiness;
@@ -113,7 +105,21 @@ public abstract class Pet {
         this.giveScale = giveScale;
     }
 
+    public void setPoint(double unit) {
+        this.maxUnit = unit;
+        this.unitToDegree = 360 / maxUnit; // how much degrees per one unit
+        this.giveScale = maxUnit * 0.1;
+    }
+
     // getters
+    public int getType() {
+        return type;
+    }
+
+    public int getTypeGame() {
+        return typeGame;
+    }
+
     public double getHealth() {
         return health;
     }
@@ -144,11 +150,5 @@ public abstract class Pet {
 
     public String getName() {
         return name;
-    }
-
-    public void setPoint(double unit) {
-        this.maxUnit = unit;
-        this.unitToDegree = 360 / maxUnit; // how much degrees per one unit
-        this.giveScale = maxUnit * 0.1;
     }
 }
