@@ -71,16 +71,12 @@ public class Choice {
             } else if (gameType == Types.GameType.DEFAULT || fieldName.getText().equals("")) {
                 toParam();
             } else {
-                try {
-                    if (Main.gameModel.startGame(gameType.getValue(), petType.getValue(), fieldName.getText())) {
-                        defaultSettings();
-                        View.view(View.SceneType.GAME, "Game");
-                    } else {
-                        errorName.setVisible(true);
-                        toParam();
-                    }
-                } catch (SQLException | ClassNotFoundException throwables) {
-                    throwables.printStackTrace();
+                if (Main.gameModel.CreateNewPet(gameType.getValue(), petType.getValue(), fieldName.getText())) {
+                    defaultSettings();
+                    Main.gameModel.startGame();
+                } else {
+                    errorName.setVisible(true);
+                    toParam();
                 }
             }
         });

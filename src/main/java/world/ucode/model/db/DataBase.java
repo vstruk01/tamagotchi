@@ -1,7 +1,7 @@
 package world.ucode.Model.db;
 
-import world.ucode.Model.pets.Pet;
-
+import world.ucode.Model.pets.Pet
+;
 import java.util.ArrayList;
 
 public abstract class DataBase {

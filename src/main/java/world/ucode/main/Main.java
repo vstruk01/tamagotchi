@@ -8,10 +8,11 @@ import world.ucode.View.View;
 
 public class Main extends Application {
     public static GameModel gameModel;
+    public static View view;
 
     @Override
     public void start(Stage stage) throws Exception {
-        View view = new View(stage);
+        view = new View(stage);
         gameModel = new GameModel();
         View.view(View.SceneType.MENU, "Cute cat of space");
     }

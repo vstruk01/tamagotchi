@@ -1,6 +1,8 @@
 package world.ucode.Model.db;
 
 import world.ucode.Model.pets.Pet;
+import world.ucode.main.Main;
+
 import java.util.ArrayList;
 import java.sql.*;
 
@@ -15,18 +17,6 @@ public class sqlite extends DataBase {
         createTablePets();
     }
 
-    public void createTablePets() throws SQLException {
-        stmt = con.createStatement();
-        stmt.execute("CREATE  TABLE IF NOT EXISTS 'Pets'(   id         INTEGER  PRIMARY KEY, " +
-                                                           "name        TEXT, "   +
-                                                           "health      REAL, "   +
-                                                           "thirst      REAL,"    +
-                                                           "cleanliness REAL, "   +
-                                                           "hunger      REAL, "   +
-                                                           "happiness   REAL, "   +
-                                                           "typeGame    INTEGER, "+
-                                                           "typePet     INTEGER);");
-    }
 
 
     @Override
@@ -90,18 +80,43 @@ public class sqlite extends DataBase {
             PreparedStatement stmtPrepare = con.prepareStatement("SELECT * FROM Pets");;
             ResultSet rs = stmtPrepare.executeQuery();;
 
-
-//            while (rs.next()) {
-//
-//            }
+            while (rs.next()) {
+                Pet pet = Main.gameModel.CreatePet(rs.getInt(9), rs.getInt(8), rs.getString(2));
+                pet.setHealth(rs.getDouble(3));
+                pet.setThirst(rs.getDouble(4));
+                pet.setCleanliness(rs.getDouble(5));
+                pet.setHunger(rs.getDouble(6));
+                pet.setHappiness(rs.getDouble(7));
+                pets.add(pet);
+            }
+            rs.close();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
         return pets;
     }
 
+    public void createTablePets() throws SQLException {
+        stmt = con.createStatement();
+        stmt.execute("CREATE  TABLE IF NOT EXISTS 'Pets'(   id         INTEGER  PRIMARY KEY, " +
+                                                           "name        TEXT, "   +
+                                                           "health      REAL, "   +
+                                                           "thirst      REAL,"    +
+                                                           "cleanliness REAL, "   +
+                                                           "hunger      REAL, "   +
+                                                           "happiness   REAL, "   +
+                                                           "typeGame    INTEGER, "+
+                                                           "typePet     INTEGER);");
+    }
+
     @Override
     public void deletePet(Pet pet) {
-
+        try {
+            PreparedStatement stmtPrepare = con.prepareStatement("DELETE FROM Pets WHERE name = ?");
+            stmtPrepare.setString(1, pet.getName());
+            stmtPrepare.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

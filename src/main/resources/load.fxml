@@ -9,12 +9,12 @@
   <content>
     <AnchorPane fx:id="anchor" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0">
          <children>
-            <Button layoutX="30.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="250.0" styleClass="backBlackBH" stylesheets="@styleBackLabel.css" text="BACK" textFill="WHITE">
+            <Button fx:id="back" layoutX="30.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="250.0" styleClass="backBlackBH" stylesheets="@styleBackLabel.css" text="BACK" textFill="WHITE">
                <font>
                   <Font size="50.0" />
                </font>
             </Button>
-            <Button layoutX="320.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="250.0" styleClass="backBlackBH" stylesheets="@styleBackLabel.css" text="PLAY" textFill="WHITE">
+            <Button fx:id="play" layoutX="320.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="250.0" styleClass="backBlackBH" stylesheets="@styleBackLabel.css" text="PLAY" textFill="WHITE">
                <font>
                   <Font size="50.0" />
                </font>

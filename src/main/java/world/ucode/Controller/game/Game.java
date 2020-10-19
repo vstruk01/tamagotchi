@@ -67,23 +67,23 @@ public class Game {
         });
 
         giveMedicine.setOnMouseClicked(e -> {
-            GameModel.pet.giveMedicine();
+            Main.gameModel.pet.giveMedicine();
             System.out.println("give medicine");
         });
         feed.setOnMouseClicked(e -> {
-            GameModel.pet.feeds();
+            Main.gameModel.pet.feeds();
             System.out.println("feed");
         });
         giveWater.setOnMouseClicked(e -> {
-            GameModel.pet.giveWater();
+            Main.gameModel.pet.giveWater();
             System.out.println("give Water");
         });
         play.setOnMouseClicked(e -> {
-            GameModel.pet.play();
+            Main.gameModel.pet.play();
             System.out.println("play");
         });
         cleanUp.setOnMouseClicked(e -> {
-            GameModel.pet.cleanUp();
+            Main.gameModel.pet.cleanUp();
             System.out.println("clean Up");
         });
 

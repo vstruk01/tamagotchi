@@ -2,33 +2,31 @@ package world.ucode.Controller.load;
 
 
 import javafx.fxml.FXML;
-import javafx.geometry.Pos;
-import javafx.scene.control.Label;
+import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import org.w3c.dom.css.CSS2Properties;
+import world.ucode.View.View;
+import world.ucode.main.Main;
 
 public class Load {
     @FXML
-    private AnchorPane anchor;
+    public AnchorPane anchor;
 
-    Label[] labels = new Label[100];
+    @FXML
+    public Button play;
+
+    @FXML
+    public Button back;
 
     @FXML
     public void initialize() {
-         for (Integer i = 1; i < 100; i++) {
-             labels[i] = new Label("load game " + i);
-             labels[i].setMinWidth(600);
-             labels[i].setMinHeight(100);
-             labels[i].setAlignment(Pos.CENTER);
-             labels[i].setId(i.toString());
-             labels[i].setOnMouseClicked(e -> {
-                 Label curr = (Label)e.getSource();
-                 System.out.println(curr.getId());
-             });
-         }
-         for (int i = 1; i < labels.length; i++) {
-             AnchorPane.setTopAnchor(labels[i], (double)i * 100);
-             anchor.setMinHeight((i + 1) * 100);
-             anchor.getChildren().add(labels[i]);
-         }
+        back.setOnMouseClicked(e -> {
+            View.view(View.lastScene, "Cute cat of space");
+        });
+        play.setOnMouseClicked(e -> {
+            View.view(View.SceneType.GAME, "game");
+            Main.gameModel.delLoadLabel();
+            Main.gameModel.startGame();
+        });
     }
 }

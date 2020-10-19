@@ -13,3 +13,4 @@ buildNumber.properties
 out
 .idea
 *.db
+.DS_Store
