@@ -146,6 +146,6 @@ public class GameModel {
     }
 
     public boolean checkLive() {
-        return !(pet.cleanliness < 0) || !(pet.health < 0) || !(pet.hunger < 0) || !(pet.thirst < 0) || !(pet.happiness < 0);
+        return !(pet.getCleanliness() < 0) || !(pet.getHealth() < 0) || !(pet.getHunger() < 0) || !(pet.getThirst() < 0) || !(pet.getHappiness() < 0);
     }
 }
