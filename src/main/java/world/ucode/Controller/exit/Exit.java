@@ -3,6 +3,7 @@ package world.ucode.Controller.exit;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import world.ucode.View.View;
+import world.ucode.main.Main;
 
 public class Exit {
     @FXML
@@ -16,7 +17,11 @@ public class Exit {
             System.exit(0);
         });
         stay.setOnMouseClicked(e -> {
-            View.view(View.lastScene, View.lastTitle);
+            if (View.lastScene == View.SceneType.GAME) {
+                Main.gameModel.startGame();
+            } else {
+                View.view(View.lastScene, View.lastTitle);
+            }
         });
     }
 }

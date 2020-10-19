@@ -11,7 +11,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="world.ucode.Controller.game.Game">
    <children>
-      <AnchorPane fx:id="playPage" visible="false">
+      <AnchorPane fx:id="playPage">
          <children>
             <ImageView fitHeight="1073.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" y="-465.0">
                <image>
@@ -100,7 +100,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="deadPage" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: black;">
+      <AnchorPane fx:id="deadPage" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: black;" visible="false">
          <children>
             <ImageView fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
                <image>

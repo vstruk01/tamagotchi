@@ -5,6 +5,7 @@ import javafx.animation.Timeline;
 import javafx.geometry.Pos;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.ArcType;
 import javafx.util.Duration;
@@ -28,6 +29,7 @@ public class GameModel {
     public Game game;
     public ArrayList<Pet> pets;
     Label[] labels;
+    private int labelChoice;
 
     public GameModel() {
         pet = new DefaultPet(Types.GameType.DEFAULT.getValue(), "def");
@@ -54,21 +56,28 @@ public class GameModel {
         labels = new Label[pets.size()];
 
         Load load = View.loaders.get(View.SceneType.LOAD).getController();
+        if (pets.size() > 6) {
+            load.pane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+        }
 
-        for (int i = 1; i <= pets.size(); i++) {
-            Pet petTmp = pets.get(i - 1);
-            labels[i - 1] = new Label(petTmp.getName() + "\ttype: " + petTmp.getType() + "\tHP " + petTmp.getHealth() + "\t");
-            labels[i - 1].setMinWidth(600);
-            labels[i - 1].setMinHeight(100);
-            labels[i - 1].setAlignment(Pos.CENTER);
-            labels[i - 1].setId(Integer.toString(i));
-            labels[i - 1].setOnMouseClicked(me -> {
+        for (int i = 0; i < pets.size(); i++) {
+            Pet petTmp = pets.get(i);
+            labels[i] = new Label(petTmp.getName() + "\ttype: " + petTmp.getType() + "\tHP " + petTmp.getHealth() + "\t");
+            labels[i].setMinWidth(600);
+            labels[i].setMinHeight(100);
+            labels[i].setAlignment(Pos.CENTER_LEFT);
+            labels[i].setStyle("-fx-background-color: rgba(0, 0, 0, 0.3)");
+            labels[i].setId(Integer.toString(i));
+            labels[i].setOnMouseClicked(me -> {
                  Label curr = (Label)me.getSource();
-                 this.pet = pets.get(Integer.parseInt(curr.getId()) - 1);
+                 this.pet = pets.get(Integer.parseInt(curr.getId()));
+                 labels[labelChoice].setStyle("-fx-background-color: rgba(0, 0, 0, 0.3)");
+                 labelChoice = Integer.parseInt(curr.getId());
+                 labels[labelChoice].setStyle("-fx-background-color: rgba(0, 0, 0, 0.6)");
             });
-            AnchorPane.setTopAnchor(labels[i - 1], (double)i * 100);
+            AnchorPane.setTopAnchor(labels[i], (double)(i * 100));
             load.anchor.setMinHeight((i + 1) * 100);
-            load.anchor.getChildren().add(labels[i - 1]);
+            load.anchor.getChildren().add(labels[i]);
         }
     }
 
