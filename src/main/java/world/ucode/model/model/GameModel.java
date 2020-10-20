@@ -29,11 +29,19 @@ public class GameModel {
     public Game game;
     public ArrayList<Pet> pets;
     Label[] labels;
-    private int labelChoice;
+    private int labelChoice = -1;
+
+    public enum  actionsEvent {
+        MEDICINE,
+        FEED,
+        PLAY,
+        CLEAN,
+        WATER,
+    }
 
     public GameModel() {
         pet = new DefaultPet(Types.GameType.DEFAULT.getValue(), "def");
-        game = View.loaders.get(View.SceneType.GAME).getController();
+        game = View.loaders.get(View.SceneType.GAME_CAT).getController();
         game.playPage.setVisible(true);
         game.deadPage.setVisible(false);
         try {
@@ -45,8 +53,8 @@ public class GameModel {
 
     public Pet CreatePet(int petType, int gameType, String petName) {
         return switch (petType) {
-            case 1 -> new Dog(gameType, petName);
-            case 2 -> new Cat(gameType, petName);
+            case 0 -> new Dog(gameType, petName);
+            case 1 -> new Cat(gameType, petName);
             default -> new DefaultPet(gameType, petName);
         };
     }
@@ -71,7 +79,9 @@ public class GameModel {
             labels[i].setOnMouseClicked(me -> {
                  Label curr = (Label)me.getSource();
                  this.pet = pets.get(Integer.parseInt(curr.getId()));
-                 labels[labelChoice].setStyle("-fx-background-color: rgba(0, 0, 0, 0.3)");
+                 if (labelChoice != -1) {
+                    labels[labelChoice].setStyle("-fx-background-color: rgba(0, 0, 0, 0.3)");
+                 }
                  labelChoice = Integer.parseInt(curr.getId());
                  labels[labelChoice].setStyle("-fx-background-color: rgba(0, 0, 0, 0.6)");
             });
@@ -81,6 +91,20 @@ public class GameModel {
         }
     }
 
+    public void toDifferentScene() {
+        StopTimeLine();
+    }
+
+    public void actions(actionsEvent ae) {
+        switch (ae) {
+            case MEDICINE -> pet.giveMedicine();
+            case PLAY -> pet.play();
+            case CLEAN -> pet.cleanUp();
+            case FEED -> pet.feeds();
+            case WATER -> pet.giveWater();
+        }
+    }
+    
     public boolean CreateNewPet(int gameType, int petType, String petName) {
         if (sql.isExistsPet(petName))
             return false;
@@ -94,11 +118,20 @@ public class GameModel {
         for (Label label : labels) {
             load.anchor.getChildren().remove(label);
         }
+        labelChoice = -1;
     }
 
     public void startGame() {
-        View.view(View.SceneType.GAME, "Game");
-        game = View.loaders.get(View.SceneType.GAME).getController();
+        System.out.println(pet.getType());
+        if (pet.getType() == Types.PetType.DOG.getValue()) {
+            System.out.println("dog");
+            View.view(View.SceneType.GAME_DOG, "Game");
+            game = View.loaders.get(View.SceneType.GAME_DOG).getController();
+        } else if (pet.getType() == Types.PetType.CAT.getValue()) {
+            System.out.println("cat");
+            View.view(View.SceneType.GAME_CAT, "Game");
+            game = View.loaders.get(View.SceneType.GAME_CAT).getController();
+        }
         game.playPage.setVisible(true);
         game.deadPage.setVisible(false);
         game.nameScreen.setText(this.pet.getName());
@@ -155,6 +188,10 @@ public class GameModel {
     }
 
     public boolean checkLive() {
-        return !(pet.getCleanliness() < 0) || !(pet.getHealth() < 0) || !(pet.getHunger() < 0) || !(pet.getThirst() < 0) || !(pet.getHappiness() < 0);
+        return !(pet.getCleanliness() < 0) && !(pet.getHealth() < 0) && !(pet.getHunger() < 0) && !(pet.getThirst() < 0) && !(pet.getHappiness() < 0);
+    }
+
+    public boolean checkChoice() {
+        return labelChoice != -1;
     }
 }

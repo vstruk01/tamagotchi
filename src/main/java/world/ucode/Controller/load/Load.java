@@ -2,11 +2,9 @@ package world.ucode.Controller.load;
 
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
-import org.w3c.dom.css.CSS2Properties;
 import world.ucode.View.View;
 import world.ucode.main.Main;
 
@@ -16,7 +14,6 @@ public class Load {
 
     @FXML
     public ScrollPane mainPane;
-
 
     @FXML
     public AnchorPane anchor;
@@ -41,10 +38,11 @@ public class Load {
         });
 
         play.setOnMouseClicked(e -> {
-            pane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-            View.view(View.SceneType.GAME, "game");
-            Main.gameModel.delLoadLabel();
-            Main.gameModel.startGame();
+            if (Main.gameModel.checkChoice()) {
+                pane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+                Main.gameModel.delLoadLabel();
+                Main.gameModel.startGame();
+            }
         });
     }
 }

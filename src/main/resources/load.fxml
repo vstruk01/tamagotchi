@@ -7,7 +7,7 @@
 
 <ScrollPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="world.ucode.Controller.load.Load">
   <content>
-    <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="595.0" prefWidth="600.0">
+    <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="595.0" prefWidth="595.0">
          <children>
             <Label fx:id="back" alignment="CENTER" prefHeight="70.0" prefWidth="300.0" styleClass="backBlackBL" stylesheets="@styleBackLabel.css" text="BACK">
                <font>
@@ -21,7 +21,7 @@
             </Label>
             <ScrollPane fx:id="pane" layoutY="70.0" prefHeight="530.0" prefWidth="600.0">
                <content>
-                  <AnchorPane fx:id="anchor" layoutY="70.0" prefHeight="530.0" prefWidth="600.0" />
+                  <AnchorPane fx:id="anchor" layoutY="70.0" prefHeight="530.0" prefWidth="595.0" />
                </content>
             </ScrollPane>
          </children></AnchorPane>

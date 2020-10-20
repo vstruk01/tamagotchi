@@ -74,6 +74,7 @@ public class Choice {
                 if (Main.gameModel.CreateNewPet(gameType.getValue(), petType.getValue(), fieldName.getText())) {
                     defaultSettings();
                     Main.gameModel.startGame();
+                    System.out.println("here");
                 } else {
                     errorName.setVisible(true);
                     toParam();

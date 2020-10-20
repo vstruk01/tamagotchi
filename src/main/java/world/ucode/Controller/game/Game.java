@@ -54,43 +54,36 @@ public class Game {
     @FXML
     public void initialize() {
         menu.setOnMouseClicked(e -> {
-            Main.gameModel.StopTimeLine();
+            Main.gameModel.toDifferentScene();
             View.view(View.SceneType.MENU, "Cute cat of space");
         });
         exit.setOnMouseClicked(e -> {
-            Main.gameModel.StopTimeLine();
+            Main.gameModel.toDifferentScene();
             View.view(View.SceneType.EXIT, "Exit");
         });
         save.setOnMouseClicked(e -> {
             Main.gameModel.savePet();
-            System.out.println("Saved");
         });
 
         giveMedicine.setOnMouseClicked(e -> {
-            Main.gameModel.pet.giveMedicine();
-            System.out.println("give medicine");
+            Main.gameModel.actions(GameModel.actionsEvent.MEDICINE);
         });
         feed.setOnMouseClicked(e -> {
-            Main.gameModel.pet.feeds();
-            System.out.println("feed");
+            Main.gameModel.actions(GameModel.actionsEvent.FEED);
         });
         giveWater.setOnMouseClicked(e -> {
-            Main.gameModel.pet.giveWater();
-            System.out.println("give Water");
+            Main.gameModel.actions(GameModel.actionsEvent.WATER);
         });
         play.setOnMouseClicked(e -> {
-            Main.gameModel.pet.play();
-            System.out.println("play");
+            Main.gameModel.actions(GameModel.actionsEvent.PLAY);
         });
         cleanUp.setOnMouseClicked(e -> {
-            Main.gameModel.pet.cleanUp();
-            System.out.println("clean Up");
+            Main.gameModel.actions(GameModel.actionsEvent.CLEAN);
         });
 
         deadMenu.setOnMouseClicked(e -> {
             View.view(View.SceneType.MENU, "Cute cat of space");
         });
-
         health.getGraphicsContext2D().setFill(Color.YELLOW);
         hunger.getGraphicsContext2D().setFill(Color.YELLOW);
         thirst.getGraphicsContext2D().setFill(Color.YELLOW);

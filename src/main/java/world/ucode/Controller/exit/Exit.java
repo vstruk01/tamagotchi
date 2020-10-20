@@ -17,7 +17,7 @@ public class Exit {
             System.exit(0);
         });
         stay.setOnMouseClicked(e -> {
-            if (View.lastScene == View.SceneType.GAME) {
+            if (View.lastScene == View.SceneType.GAME_CAT || View.lastScene == View.SceneType.GAME_DOG) {
                 Main.gameModel.startGame();
             } else {
                 View.view(View.lastScene, View.lastTitle);

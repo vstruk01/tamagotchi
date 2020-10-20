@@ -11,7 +11,8 @@ public class View {
     public static enum SceneType {
         MENU,
         NEW_GAME,
-        GAME,
+        GAME_CAT,
+        GAME_DOG,
         LOAD,
         EXIT,
     };
@@ -25,15 +26,16 @@ public class View {
     public static String currTitle;
 
     public View(Stage stage) throws IOException {
-        this.stage = stage;
+        View.stage = stage;
 
-        this.stage.setResizable(false);
+        View.stage.setResizable(false);
         if (scenes.isEmpty()) {
             this.addScene(SceneType.MENU, "/menu.fxml");
-            this.addScene(SceneType.GAME, "/game.fxml");
+            this.addScene(SceneType.GAME_CAT, "/game.fxml");
             this.addScene(SceneType.LOAD, "/load.fxml");
             this.addScene(SceneType.EXIT, "/exit.fxml");
             this.addScene(SceneType.NEW_GAME, "/new_game.fxml");
+            this.addScene(SceneType.GAME_DOG, "/dogGame.fxml");
         }
     }
 
