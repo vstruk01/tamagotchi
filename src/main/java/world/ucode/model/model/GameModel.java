@@ -30,6 +30,8 @@ public class GameModel {
     public ArrayList<Pet> pets;
     Label[] labels;
     private int labelChoice = -1;
+    private boolean autoSave = true;
+    private boolean exitAnswer = true;
 
     public enum  actionsEvent {
         MEDICINE,
@@ -40,6 +42,11 @@ public class GameModel {
     }
 
     public GameModel() {
+        View.stage.setOnCloseRequest(e -> {
+            if (pet.getType() != Types.PetType.DEFAULT.getValue() && autoSave) {
+                this.savePet();
+            }
+        });
         pet = new DefaultPet(Types.GameType.DEFAULT.getValue(), "def");
         game = View.loaders.get(View.SceneType.GAME_CAT).getController();
         game.playPage.setVisible(true);
@@ -92,6 +99,7 @@ public class GameModel {
     }
 
     public void toDifferentScene() {
+        savePet();
         StopTimeLine();
     }
 
@@ -122,13 +130,10 @@ public class GameModel {
     }
 
     public void startGame() {
-        System.out.println(pet.getType());
         if (pet.getType() == Types.PetType.DOG.getValue()) {
-            System.out.println("dog");
             View.view(View.SceneType.GAME_DOG, "Game");
             game = View.loaders.get(View.SceneType.GAME_DOG).getController();
         } else if (pet.getType() == Types.PetType.CAT.getValue()) {
-            System.out.println("cat");
             View.view(View.SceneType.GAME_CAT, "Game");
             game = View.loaders.get(View.SceneType.GAME_CAT).getController();
         }
@@ -193,5 +198,30 @@ public class GameModel {
 
     public boolean checkChoice() {
         return labelChoice != -1;
+    }
+
+    public void onSound() {
+        sound = true;
+    }
+    public void offSound() {
+        sound = false;
+    }
+    public void onSave() {
+        save = true;
+    }
+    public void offSave() {
+        save = false;
+    }
+    public void onAutoSave() {
+        autoSave = true;
+    }
+    public void offAutoSave() {
+        autoSave = false;
+    }
+    public void onExitAnswer() {
+        exitAnswer = true;
+    }
+    public void offExitAnswer() {
+        exitAnswer = false;
     }
 }

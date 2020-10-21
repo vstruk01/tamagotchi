@@ -7,13 +7,16 @@ import world.ucode.View.View;
 
 public class MenuController {
     @FXML
-    private Label newGame;
+    public Label newGame;
 
     @FXML
-    private Label loadGame;
+    public Label loadGame;
 
     @FXML
-    private Label leave;
+    public Label leave;
+
+    @FXML
+    public Label settings;
 
     @FXML
     public void initialize() {
@@ -28,6 +31,11 @@ public class MenuController {
 
         leave.setOnMouseClicked(e -> {
             View.view(View.SceneType.EXIT, "Exit");
+        });
+
+        settings.setOnMouseClicked(me -> {
+            System.out.println("settings");
+//            View.view(V);
         });
 
     }

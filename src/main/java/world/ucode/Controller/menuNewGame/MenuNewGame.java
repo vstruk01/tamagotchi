@@ -46,6 +46,8 @@ public class Choice {
 
     @FXML
     public void initialize() {
+        fieldName.setFocusTraversable(false);
+
         labelEasy.setOnMouseClicked(e -> {
             labelEasy.setStyle("-fx-background-color: rgba(0, 0, 0, 0.6)");
             labelMiddle.setStyle("-fx-background-color: rgba(0, 0, 0, 0.3)");
@@ -74,7 +76,6 @@ public class Choice {
                 if (Main.gameModel.CreateNewPet(gameType.getValue(), petType.getValue(), fieldName.getText())) {
                     defaultSettings();
                     Main.gameModel.startGame();
-                    System.out.println("here");
                 } else {
                     errorName.setVisible(true);
                     toParam();

@@ -9,8 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<Pane fx:controller="world.ucode.Controller.game.Game" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="world.ucode.Controller.game.Game">
    <children>
       <AnchorPane fx:id="playPage" prefHeight="700.0" prefWidth="800.0">
          <children>
@@ -101,19 +100,14 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="deadPage" prefHeight="200.0" prefWidth="200.0" visible="false">
+      <AnchorPane fx:id="deadPage" prefHeight="700.0" prefWidth="800.0" style="-fx-background-color: black;" visible="false">
          <children>
-            <ImageView fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@cateyes.jpg" />
-               </image>
-            </ImageView>
-            <Label alignment="CENTER" prefHeight="200.0" prefWidth="600.0" text="YOU DIED" textFill="RED">
+            <Label alignment="CENTER" prefHeight="170.0" prefWidth="800.0" text="YOU DIED" textFill="RED">
                <font>
                   <Font size="96.0" />
                </font>
             </Label>
-            <Label fx:id="deadMenu" alignment="CENTER" prefHeight="400.0" prefWidth="600.0" text="MENU" textFill="WHITE">
+            <Label fx:id="deadMenu" alignment="CENTER" layoutY="170.0" prefHeight="530.0" prefWidth="800.0" text="MENU" textFill="WHITE">
                <font>
                   <Font size="40.0" />
                </font>

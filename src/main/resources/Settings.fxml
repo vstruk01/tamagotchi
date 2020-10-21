@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: pink;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label alignment="CENTER" prefHeight="100.0" prefWidth="600.0" styleClass="backBlackBL" stylesheets="@styleBackLabel.css" text="Settings">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <CheckBox alignment="CENTER" layoutY="140.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="600.0" styleClass="backBlackBL" stylesheets="@styleBackLabel.css" text="Sound">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </CheckBox>
+      <CheckBox alignment="CENTER" layoutY="280.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="600.0" styleClass="backBlackBL" stylesheets="@styleBackLabel.css" text="Save">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </CheckBox>
+      <CheckBox alignment="CENTER" layoutY="210.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="600.0" styleClass="backBlackBL" stylesheets="@styleBackLabel.css" text="AutoSave">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </CheckBox>
+      <CheckBox alignment="CENTER" layoutY="350.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="600.0" styleClass="backBlackBL" stylesheets="@styleBackLabel.css" text="Exit without answer">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </CheckBox>
+   </children>
+</Pane>
