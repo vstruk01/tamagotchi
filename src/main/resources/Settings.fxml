@@ -5,33 +5,37 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: pink;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: pink;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="world.ucode.Controller.settings.settings">
    <children>
       <Label alignment="CENTER" prefHeight="100.0" prefWidth="600.0" styleClass="backBlackBL" stylesheets="@styleBackLabel.css" text="Settings">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <CheckBox alignment="CENTER" layoutY="140.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="600.0" styleClass="backBlackBL" stylesheets="@styleBackLabel.css" text="Sound">
+      <CheckBox fx:id="sound" alignment="CENTER" layoutY="140.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="600.0" selected="true" styleClass="backBlackBL" stylesheets="@styleBackLabel.css" text="Sound">
          <font>
             <Font size="23.0" />
          </font>
       </CheckBox>
-      <CheckBox alignment="CENTER" layoutY="280.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="600.0" styleClass="backBlackBL" stylesheets="@styleBackLabel.css" text="Save">
+      <CheckBox fx:id="save" alignment="CENTER" layoutY="280.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="600.0" selected="true" styleClass="backBlackBL" stylesheets="@styleBackLabel.css" text="Button save">
          <font>
             <Font size="23.0" />
          </font>
       </CheckBox>
-      <CheckBox alignment="CENTER" layoutY="210.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="600.0" styleClass="backBlackBL" stylesheets="@styleBackLabel.css" text="AutoSave">
+      <CheckBox fx:id="autoSave" alignment="CENTER" layoutY="210.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="600.0" selected="true" styleClass="backBlackBL" stylesheets="@styleBackLabel.css" text="AutoSave">
          <font>
             <Font size="23.0" />
          </font>
       </CheckBox>
-      <CheckBox alignment="CENTER" layoutY="350.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="600.0" styleClass="backBlackBL" stylesheets="@styleBackLabel.css" text="Exit without answer">
+      <CheckBox fx:id="exitAnswer" alignment="CENTER" layoutY="350.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="600.0" selected="true" styleClass="backBlackBL" stylesheets="@styleBackLabel.css" text="Exit without answer">
          <font>
             <Font size="23.0" />
          </font>
       </CheckBox>
+      <Label fx:id="back" alignment="CENTER" layoutY="500.0" prefHeight="100.0" prefWidth="600.0" styleClass="backBlackBL" stylesheets="@styleBackLabel.css" text="Back">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
    </children>
 </Pane>
