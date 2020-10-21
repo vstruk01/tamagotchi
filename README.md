@@ -13,7 +13,7 @@ You must have on your Mac
 * java       15
 * maven      4.0
 
-> git clone
+> git clone https://github.com/vstruk01/tamagotchi
 >
 > cd tamagotchi
 >
