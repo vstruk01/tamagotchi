@@ -23,6 +23,7 @@ public class settings {
     @FXML
     public void initialize() {
         sound.setOnAction(e -> {
+            Main.gameModel.clickSound();
             if (sound.isSelected()) {
                 Main.gameModel.onSound();
             } else {
@@ -30,6 +31,7 @@ public class settings {
             }
         });
         autoSave.setOnAction(e -> {
+            Main.gameModel.clickSound();
             if (autoSave.isSelected()) {
                 Main.gameModel.onAutoSave();
             } else {
@@ -37,6 +39,7 @@ public class settings {
             }
         });
         save.setOnAction(e -> {
+            Main.gameModel.clickSound();
             if (save.isSelected()) {
                 Main.gameModel.onSave();
             } else {
@@ -44,6 +47,7 @@ public class settings {
             }
         });
         exitAnswer.setOnAction(e -> {
+            Main.gameModel.clickSound();
             if (exitAnswer.isSelected()) {
                 Main.gameModel.onExitAnswer();
             } else {
@@ -51,6 +55,7 @@ public class settings {
             }
         });
         back.setOnMouseClicked(e -> {
+            Main.gameModel.clickSound();
             View.view(View.lastScene, View.lastTitle);
         });
     }

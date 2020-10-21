@@ -32,6 +32,7 @@ public class Load {
         mainPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
 
         back.setOnMouseClicked(e -> {
+            Main.gameModel.clickSound();
             pane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
             Main.gameModel.delLoadLabel();
             View.view(View.lastScene, "Cute cat of space");
@@ -39,6 +40,7 @@ public class Load {
 
         play.setOnMouseClicked(e -> {
             if (Main.gameModel.checkChoice()) {
+                Main.gameModel.clickSound();
                 pane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
                 Main.gameModel.delLoadLabel();
                 Main.gameModel.startGame();

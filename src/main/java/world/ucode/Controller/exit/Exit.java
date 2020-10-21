@@ -14,9 +14,11 @@ public class Exit {
     @FXML
     public void initialize() {
         leave.setOnMouseClicked(e -> {
+            Main.gameModel.clickSound();
             Main.gameModel.leave();
         });
         stay.setOnMouseClicked(e -> {
+            Main.gameModel.clickSound();
             if (View.lastScene == View.SceneType.GAME_CAT || View.lastScene == View.SceneType.GAME_DOG) {
                 Main.gameModel.startGame();
             } else {

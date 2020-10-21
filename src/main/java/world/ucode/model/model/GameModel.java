@@ -111,13 +111,14 @@ public class GameModel {
             labels[i].setStyle("-fx-background-color: rgba(0, 0, 0, 0.3)");
             labels[i].setId(Integer.toString(i));
             labels[i].setOnMouseClicked(me -> {
-                 Label curr = (Label)me.getSource();
-                 this.pet = pets.get(Integer.parseInt(curr.getId()));
-                 if (labelChoice != -1) {
-                    labels[labelChoice].setStyle("-fx-background-color: rgba(0, 0, 0, 0.3)");
-                 }
-                 labelChoice = Integer.parseInt(curr.getId());
-                 labels[labelChoice].setStyle("-fx-background-color: rgba(0, 0, 0, 0.6)");
+                this.clickSound();
+                Label curr = (Label)me.getSource();
+                this.pet = pets.get(Integer.parseInt(curr.getId()));
+                if (labelChoice != -1) {
+                   labels[labelChoice].setStyle("-fx-background-color: rgba(0, 0, 0, 0.3)");
+                }
+                labelChoice = Integer.parseInt(curr.getId());
+                labels[labelChoice].setStyle("-fx-background-color: rgba(0, 0, 0, 0.6)");
             });
             AnchorPane.setTopAnchor(labels[i], (double)(i * 100));
             load.anchor.setMinHeight((i + 1) * 100);

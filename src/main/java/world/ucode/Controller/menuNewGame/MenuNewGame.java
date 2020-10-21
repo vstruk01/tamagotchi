@@ -49,18 +49,21 @@ public class MenuNewGame {
         fieldName.setFocusTraversable(false);
 
         labelEasy.setOnMouseClicked(e -> {
+            Main.gameModel.clickSound();
             labelEasy.setStyle("-fx-background-color: rgba(0, 0, 0, 0.6)");
             labelMiddle.setStyle("-fx-background-color: rgba(0, 0, 0, 0.3)");
             labelHard.setStyle("-fx-background-color: rgba(0, 0, 0, 0.3)");
             gameType = Types.GameType.EASY;
         });
         labelMiddle.setOnMouseClicked(e -> {
+            Main.gameModel.clickSound();
             labelEasy.setStyle("-fx-background-color: rgba(0, 0, 0, 0.3)");
             labelMiddle.setStyle("-fx-background-color: rgba(0, 0, 0, 0.6)");
             labelHard.setStyle("-fx-background-color: rgba(0, 0, 0, 0.3)");
             gameType = Types.GameType.MIDDLE;
         });
         labelHard.setOnMouseClicked(e -> {
+            Main.gameModel.clickSound();
             labelEasy.setStyle("-fx-background-color: rgba(0, 0, 0, 0.3)");
             labelMiddle.setStyle("-fx-background-color: rgba(0, 0, 0, 0.3)");
             labelHard.setStyle("-fx-background-color: rgba(0, 0, 0, 0.6)");
@@ -68,6 +71,7 @@ public class MenuNewGame {
         });
 
         startGame.setOnMouseClicked(MouseEvent -> {
+            Main.gameModel.clickSound();
             if (petType == Types.PetType.DEFAULT) {
                 toType();
             } else if (gameType == Types.GameType.DEFAULT || fieldName.getText().equals("")) {
@@ -84,22 +88,27 @@ public class MenuNewGame {
         });
 
         paramPet.setOnMouseClicked(MouseEvent -> {
+            Main.gameModel.clickSound();
             toParam();
         });
         typePet.setOnMouseClicked(MouseEvent -> {
+            Main.gameModel.clickSound();
             toType();
         });
         choiceCat.setOnMouseClicked(MouseEvent -> {
+            Main.gameModel.clickSound();
             choiceCat.setStyle("-fx-background-color: rgba(0, 0, 0, 0.4)");
             choiceDog.setStyle("-fx-background-color: rgba(0, 0, 0, 0)");
             petType = Types.PetType.CAT;
         });
         choiceDog.setOnMouseClicked(MouseEvent -> {
+            Main.gameModel.clickSound();
             choiceCat.setStyle("-fx-background-color: rgba(0, 0, 0, 0)");
             choiceDog.setStyle("-fx-background-color: rgba(0, 0, 0, 0.4)");
             petType = Types.PetType.DOG;
         });
         backMenu.setOnMouseClicked(e -> {
+            Main.gameModel.clickSound();
             defaultSettings();
             View.view(View.SceneType.MENU, "Cute cat of space");
         });

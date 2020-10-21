@@ -54,34 +54,43 @@ public class Game {
     @FXML
     public void initialize() {
         menu.setOnMouseClicked(e -> {
+            Main.gameModel.clickSound();
             Main.gameModel.toDifferentScene();
             View.view(View.SceneType.MENU, "Cute cat of space");
         });
         exit.setOnMouseClicked(e -> {
+            Main.gameModel.clickSound();
             Main.gameModel.exitGame();
             View.view(View.SceneType.EXIT, "Exit");
         });
         save.setOnMouseClicked(e -> {
+            Main.gameModel.clickSound();
             Main.gameModel.savePet();
         });
 
         giveMedicine.setOnMouseClicked(e -> {
+            Main.gameModel.clickSound();
             Main.gameModel.actions(GameModel.actionsEvent.MEDICINE);
         });
         feed.setOnMouseClicked(e -> {
+            Main.gameModel.clickSound();
             Main.gameModel.actions(GameModel.actionsEvent.FEED);
         });
         giveWater.setOnMouseClicked(e -> {
+            Main.gameModel.clickSound();
             Main.gameModel.actions(GameModel.actionsEvent.WATER);
         });
         play.setOnMouseClicked(e -> {
+            Main.gameModel.clickSound();
             Main.gameModel.actions(GameModel.actionsEvent.PLAY);
         });
         cleanUp.setOnMouseClicked(e -> {
+            Main.gameModel.clickSound();
             Main.gameModel.actions(GameModel.actionsEvent.CLEAN);
         });
 
         deadMenu.setOnMouseClicked(e -> {
+            Main.gameModel.clickSound();
             View.view(View.SceneType.MENU, "Cute cat of space");
         });
         health.getGraphicsContext2D().setFill(Color.YELLOW);
