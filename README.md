@@ -25,8 +25,6 @@ You must have on your Mac
 
 **Screens**
 
-![](screen1.png)
---
 ![](screen2.png)
 --
 ![](screen3.png)
