@@ -43,6 +43,7 @@ You must have on your Mac
 ---
 
 * java 15
+* CSS
 * javaFX
 * sqlite
 * maven
