@@ -25,18 +25,18 @@ You must have on your Mac
 
 **Screens**
 
-![](screen2.png)
---
 ![](screen3.png)
 --
-![](screen4.png)
+![](screen2.png)
 --
-![](screen5.png)
+![](screen4.png)
 --
 ![](screen6.png)
 --
 ![](screen7.png)
 ---
+![](screen5.png)
+--
 
 ### Technologies
 
