@@ -18,6 +18,8 @@ import world.ucode.Model.pets.Pet;
 import world.ucode.Model.types.Types;
 import world.ucode.View.View;
 import world.ucode.Model.pets.DefaultPet;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -29,9 +31,13 @@ public class GameModel {
     public Game game;
     public ArrayList<Pet> pets;
     Label[] labels;
+    Media soundGame;
+    Media soundButton;
+    MediaPlayer mediaPlayer;
     private int labelChoice = -1;
     private boolean autoSave = true;
     private boolean exitAnswer = true;
+    private boolean sound = true;
 
     public enum  actionsEvent {
         MEDICINE,
@@ -42,19 +48,37 @@ public class GameModel {
     }
 
     public GameModel() {
+        timeLineReduce = getTimeLineReduce();
+
+        soundGame = new Media(getClass().getResource("/media.mp3").toString());
+        soundButton = new Media(getClass().getResource("/clickButton.mp3").toString());
+        mediaPlayer = new MediaPlayer(soundGame);
+        mediaPlayer.setAutoPlay(true);
+        mediaPlayer.setCycleCount(Timeline.INDEFINITE);
+        mediaPlayer.play();
+
         View.stage.setOnCloseRequest(e -> {
             if (pet.getType() != Types.PetType.DEFAULT.getValue() && autoSave) {
                 this.savePet();
             }
         });
+
         pet = new DefaultPet(Types.GameType.DEFAULT.getValue(), "def");
         game = View.loaders.get(View.SceneType.GAME_CAT).getController();
         game.playPage.setVisible(true);
         game.deadPage.setVisible(false);
+
         try {
             sql = new sqlite();
         } catch (SQLException | ClassNotFoundException e) {
             System.out.println(e.getMessage());
+        }
+    }
+
+    public void clickSound() {
+        if (sound) {
+            MediaPlayer player = new MediaPlayer(soundButton);
+            player.play();
         }
     }
 
@@ -77,10 +101,13 @@ public class GameModel {
 
         for (int i = 0; i < pets.size(); i++) {
             Pet petTmp = pets.get(i);
-            labels[i] = new Label(petTmp.getName() + "\ttype: " + petTmp.getType() + "\tHP " + petTmp.getHealth() + "\t");
+            labels[i] = new Label("Name: " + petTmp.getName() +
+                                     ",  Type: " + this.getStringTypePet(petTmp.getType()) +
+                                     ",  Game: " + this.getStringTypeGame(petTmp.getTypeGame()));
+
             labels[i].setMinWidth(600);
             labels[i].setMinHeight(100);
-            labels[i].setAlignment(Pos.CENTER_LEFT);
+            labels[i].setAlignment(Pos.CENTER);
             labels[i].setStyle("-fx-background-color: rgba(0, 0, 0, 0.3)");
             labels[i].setId(Integer.toString(i));
             labels[i].setOnMouseClicked(me -> {
@@ -140,7 +167,6 @@ public class GameModel {
         game.playPage.setVisible(true);
         game.deadPage.setVisible(false);
         game.nameScreen.setText(this.pet.getName());
-        timeLineReduce = getTimeLineReduce();
         timeLineReduce.play();
     }
 
@@ -200,17 +226,40 @@ public class GameModel {
         return labelChoice != -1;
     }
 
+    public void exitGame() {
+        if (exitAnswer) {
+            this.toDifferentScene();
+        } else {
+            this.leave();
+        }
+    }
+
+    public void leave() {
+        if (autoSave && pet.getType() != Types.PetType.DEFAULT.getValue()) {
+            this.savePet();
+        }
+        System.exit(0);
+    }
+
     public void onSound() {
         sound = true;
+        mediaPlayer.play();
     }
     public void offSound() {
         sound = false;
+        mediaPlayer.pause();
     }
     public void onSave() {
-        save = true;
+        Game gameCat = View.loaders.get(View.SceneType.GAME_CAT).getController();
+        Game gameDog = View.loaders.get(View.SceneType.GAME_DOG).getController();
+        gameCat.save.setVisible(true);
+        gameDog.save.setVisible(true);
     }
     public void offSave() {
-        save = false;
+        Game gameCat = View.loaders.get(View.SceneType.GAME_CAT).getController();
+        Game gameDog = View.loaders.get(View.SceneType.GAME_DOG).getController();
+        gameCat.save.setVisible(false);
+        gameDog.save.setVisible(false);
     }
     public void onAutoSave() {
         autoSave = true;
@@ -223,5 +272,21 @@ public class GameModel {
     }
     public void offExitAnswer() {
         exitAnswer = false;
+    }
+
+    public String getStringTypePet(int typePet) {
+        return switch (typePet) {
+            case 0 -> "Dog";
+            case 1 -> "Cat";
+            default -> "Def";
+        };
+    }
+    public String getStringTypeGame(int typeGame) {
+        return switch (typeGame) {
+            case 0 -> "Hard";
+            case 1 -> "Middle";
+            case 2 -> "Easy";
+            default -> "Def";
+        };
     }
 }

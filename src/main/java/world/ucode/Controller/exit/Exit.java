@@ -14,7 +14,7 @@ public class Exit {
     @FXML
     public void initialize() {
         leave.setOnMouseClicked(e -> {
-            System.exit(0);
+            Main.gameModel.leave();
         });
         stay.setOnMouseClicked(e -> {
             if (View.lastScene == View.SceneType.GAME_CAT || View.lastScene == View.SceneType.GAME_DOG) {

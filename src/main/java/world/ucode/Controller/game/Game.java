@@ -58,7 +58,7 @@ public class Game {
             View.view(View.SceneType.MENU, "Cute cat of space");
         });
         exit.setOnMouseClicked(e -> {
-            Main.gameModel.toDifferentScene();
+            Main.gameModel.exitGame();
             View.view(View.SceneType.EXIT, "Exit");
         });
         save.setOnMouseClicked(e -> {

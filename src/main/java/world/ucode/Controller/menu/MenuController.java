@@ -30,12 +30,12 @@ public class MenuController {
         });
 
         leave.setOnMouseClicked(e -> {
+            Main.gameModel.exitGame();
             View.view(View.SceneType.EXIT, "Exit");
         });
 
         settings.setOnMouseClicked(me -> {
-            System.out.println("settings");
-//            View.view(V);
+            View.view(View.SceneType.SETTINGS, "settings");
         });
 
     }

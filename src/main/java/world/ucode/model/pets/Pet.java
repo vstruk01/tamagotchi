@@ -17,18 +17,10 @@ public abstract class Pet {
         this.type = petType;
         this.typeGame = typeGame;
         switch (typeGame) {
-            case 0:
-                this.setPoint(120);
-                break;
-            case 1:
-                this.setPoint(180);
-                break;
-            case 2:
-                this.setPoint(240);
-                break;
-            default:
-                this.setPoint(200);
-                break;
+            case 0 -> this.setPoint(120);
+            case 1 -> this.setPoint(180);
+            case 2 -> this.setPoint(240);
+            default -> this.setPoint(200);
         }
         this.cleanliness = maxUnit;
         this.health = maxUnit;

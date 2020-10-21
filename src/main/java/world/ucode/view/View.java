@@ -14,6 +14,7 @@ public class View {
         GAME_CAT,
         GAME_DOG,
         LOAD,
+        SETTINGS,
         EXIT,
     };
 
@@ -36,6 +37,7 @@ public class View {
             this.addScene(SceneType.EXIT, "/exit.fxml");
             this.addScene(SceneType.NEW_GAME, "/new_game.fxml");
             this.addScene(SceneType.GAME_DOG, "/dogGame.fxml");
+            this.addScene(SceneType.SETTINGS, "/settings.fxml");
         }
     }
 

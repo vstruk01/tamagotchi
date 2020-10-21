@@ -1,4 +1,4 @@
-package world.ucode.Controller.newGame;
+package world.ucode.Controller.menuNewGame;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -10,7 +10,7 @@ import world.ucode.main.Main;
 import world.ucode.Model.types.Types;
 import world.ucode.View.View;
 
-public class Choice {
+public class MenuNewGame {
     public Types.GameType gameType = Types.GameType.DEFAULT;
     public Types.PetType petType = Types.PetType.DEFAULT;
 
